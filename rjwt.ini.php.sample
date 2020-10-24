@@ -7,5 +7,9 @@ secret = "SERVER_SECRET"
 nasIPID = "NAS ID ADDRESS"
 nasID = "NAS ID"
 
+[RADIUS_Testing_Info]
+testingUsername = "USERNAME"
+testingPassword = "PASSWORD"
+
 [JWT_Info]
 keyFile = "authControlStorage/jwt_auth.key"
