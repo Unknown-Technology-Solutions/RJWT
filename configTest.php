@@ -1,7 +1,7 @@
 <?php
 $configLocation = "rjwt.ini.php";
 
-$rjwtConfig = parse_ini_file($configLocation);
+$rjwtConfig = parse_ini_file($configLocation) or die("Could not read config");
 
 echo $rjwtConfig["serverIP"] . "\n";
 echo $rjwtConfig["secret"] . "\n";
