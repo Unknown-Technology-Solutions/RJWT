@@ -4,6 +4,8 @@
 // Writen by Zane Reick
 //
 
+error_reporting(0);
+
 //Make sure to set these variables to the correct locations!!
 //User set variables:
 $secConfLoc = "./security_conf.ini.php";  //Security Configuration Location
@@ -21,5 +23,7 @@ $endClient = protect($_POST["endClient"]);
 
 // Import security config
 
-if (fopen($secConfLoc, "r")
-$securityConf = parse
+$fChk = fopen($secConfLoc, "r") or die("Invalid configuration location!\n");
+fclose($fChk);
+
+$securityConf = parse_ini_file($secConfLoc);
