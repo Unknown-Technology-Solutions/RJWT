@@ -10,6 +10,13 @@ function protect($string)
     return $string;
 }
 
+function return_var_dump(){
+    // It works like var_dump, but it returns a string instead of printing it.
+    $args = func_get_args(); // For <5.3.0 support ...
+    ob_start();
+    call_user_func_array('var_dump', $args);
+    return ob_get_clean();
+}
 
 #JWT Verify Function
 
