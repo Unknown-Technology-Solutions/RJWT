@@ -1,0 +1,8 @@
+;<?php die(); ?>
+; Security Configuration Example
+
+[Security_Info]
+passkey = "PASSKEY"
+allowed_users[] = "0.0.0.0"
+allowed_users[] = "1.1.1.1"
+allowed_users[] = "2.2.2.2"
