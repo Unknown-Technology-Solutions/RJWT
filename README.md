@@ -1,4 +1,6 @@
 # RJWT
+![GitHub](https://img.shields.io/github/license/Unknown-Technology-Solutions/RJWT) ![GitHub top language](https://img.shields.io/github/languages/top/Unknown-Technology-Solutions/RJWT)
+
 This is the RJWT library that we built for authentication.
 
 ### Files/Folders and their purposes
