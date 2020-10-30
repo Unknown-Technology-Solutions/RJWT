@@ -18,8 +18,8 @@ require_once 'rjwt_mod.php';
 
 $username  = protect($_POST["username"]);
 $password  = protect($_POST["password"]);
-$passkey   = protect($_GET["passkey"]);
-$endClient = protect($_GET["endClient"]);
+$passkey   = protect($_POST["passkey"]);
+$endClient = protect($_POST["endClient"]);
 
 // Import security config
 
@@ -28,9 +28,14 @@ fclose($fChk);
 
 $securityConf = parse_ini_file($secConfLoc);
 
-print($securityConf['passkey']."<br />");
+#print($securityConf['passkey']."<br />");
 #print(return_var_dump($securityConf['allowed_users']));
 #print($securityConf['allowed_users'][1]);
+
+print($username);
+print($password);
+print($passkey);
+print($endClient);
 
 if (in_array($endClient, $securityConf['allowed_users'])) {
   if ($passkey == $securityConf['passkey']) {
