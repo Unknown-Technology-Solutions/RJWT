@@ -32,17 +32,28 @@ $securityConf = parse_ini_file($secConfLoc);
 #print(return_var_dump($securityConf['allowed_users']));
 #print($securityConf['allowed_users'][1]);
 
-print($username);
-print($password);
-print($passkey);
-print($endClient);
+#print($username);
+#print($password);
+#print($passkey);
+#print($endClient);
 
-if (in_array($endClient, $securityConf['allowed_users'])) {
-  if ($passkey == $securityConf['passkey']) {
-    print("Function test passed");
-  } else {
-    print("Function test failed");
-  }
+if (in_array($endClient, $securityConf['allowed_users']) || (!$username || !$password)) {
+    if ($passkey == $securityConf['passkey']) {
+        $authenticated = rjwtAuth($username, $password, "./rjwt.ini.php");
+
+        if ($authenticated === false) {
+            header('Content-Type: application/json');
+            echo json_encode([ "validHost" => "True", "validKey" => "True", "error" => "Invalid Username or Password", "authenticated" => "False"]);
+        } else {
+            // access request was accepted - client authenticated successfully
+            header('Content-Type: application/json');
+            echo json_encode([ "validHost" => "True", "validKey" => "True", "error" => "null", "authenticated" => "True"]);
+        }
+    } else {
+      header('Content-Type: application/json');
+      echo json_encode([ "validHost" => "True", "validKey" => "False", "error" => "null", "authenticated" => "False"]);
+    }
 } else {
-  print("Function test failed");
+  header('Content-Type: application/json');
+  echo json_encode([ "validHost" => "False", "validKey" => "False", "error" => "null", "authenticated" => "False"]);
 }
