@@ -1,5 +1,5 @@
 # RJWT
-![GitHub](https://img.shields.io/github/license/Unknown-Technology-Solutions/RJWT) ![GitHub top language](https://img.shields.io/github/languages/top/Unknown-Technology-Solutions/RJWT)
+![GitHub](https://img.shields.io/github/license/Unknown-Technology-Solutions/RJWT) ![GitHub top language](https://img.shields.io/github/languages/top/Unknown-Technology-Solutions/RJWT) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FUnknown-Technology-Solutions%2FRJWT.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FUnknown-Technology-Solutions%2FRJWT?ref=badge_shield)
 
 This is the RJWT library that we built for authentication.
 
